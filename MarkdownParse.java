@@ -76,6 +76,12 @@ public class MarkdownParse {
                 toReturn.add(potentialLink);
                 currentIndex = closeParen + 1;
             }
+
+            if(markdown.charAt(openParen -1 ) != '!'){
+                String link = new String(markdown.substring(openParen+1, closeParen));
+                toReturn.add(link);
+            }
+
             else {
                 currentIndex = currentIndex + 1;
             }
